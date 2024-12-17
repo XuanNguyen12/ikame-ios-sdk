@@ -71,7 +71,7 @@ Pod::Spec.new do |s|
   s.dependency 'AppLovinMediationByteDanceAdapter'
   s.dependency 'AppLovinMediationUnityAdsAdapter'
 
-  s.vendored_frameworks = 'Frameworks/ikame_ios_sdk.xcframework'
+  s.vendored_frameworks = 'ikame_ios_sdk.xcframework'
 
 	
 
