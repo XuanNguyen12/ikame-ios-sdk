@@ -1,0 +1,245 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ikame_ios_sdk
+import AdjustSdk
+import AppLovinSDK
+import Combine
+import CommonCrypto
+import CoreTelephony
+import FirebaseAnalytics
+import FirebaseCore
+import FirebaseRemoteConfig
+import Foundation
+import GoogleMobileAds
+import Network
+import OSLog
+import Swift
+import SystemConfiguration
+import UIKit
+import UserMessagingPlatform
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import ikame_ios_sdk
+import os
+public protocol IKShowAdListener {
+  func onAdsShowed(_ screen: Swift.String)
+  func onAdsDismiss(_ screen: Swift.String)
+  func onAdsShowFail(_ screen: Swift.String, error: ikame_ios_sdk.IKAdError)
+  func onAdsShowTimeout(_ screen: Swift.String)
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func removeAllConstraints()
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class IkmWidgetAdLayout : ikame_ios_sdk.MonetLibBaseNibView, ikame_ios_sdk.MonetLibNativeAdContentViewProtocol {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var optionView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var headlineView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var callToActionView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var iconView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var bodyView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var storeView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var priceView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var imageView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var starRatingView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var advertiserView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var mediaView: UIKit.UIView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var adChoicesView: UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public protocol MonetLibNativeAdContentViewProtocol : UIKit.UIView {
+  var optionView: UIKit.UIView? { get set }
+  var headlineView: UIKit.UIView? { get set }
+  var callToActionView: UIKit.UIView? { get set }
+  var iconView: UIKit.UIView? { get set }
+  var bodyView: UIKit.UIView? { get set }
+  var storeView: UIKit.UIView? { get set }
+  var priceView: UIKit.UIView? { get set }
+  var imageView: UIKit.UIView? { get set }
+  var starRatingView: UIKit.UIView? { get set }
+  var advertiserView: UIKit.UIView? { get set }
+  var mediaView: UIKit.UIView? { get set }
+  var adChoicesView: UIKit.UIView? { get set }
+}
+extension ObjectiveC.NSObject {
+  public var bc_className: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BCBaseNibView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) open var bundle: Foundation.Bundle? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func setup()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class MonetLibBaseNibView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) open var bundle: Foundation.Bundle? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func setup()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class MonetLib2BaseNibView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) open var bundle: Foundation.Bundle? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) open func setup()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class UIClass : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ObjectiveC.NSObject {
+  public var monetLib_ClassName: Swift.String {
+    get
+  }
+}
+public class IKRewardAd {
+  public init()
+  public func loadAd(screenAd: Swift.String, callback: (any ikame_ios_sdk.IKLoadAdListener)?)
+  public func showAd(vc: UIKit.UIViewController, screen: Swift.String, adListener: (any ikame_ios_sdk.IKShowRewardAdListener)?, loadingCallback: ikame_ios_sdk.IKLoadingsAdListener? = nil)
+  public func destroy()
+  @objc deinit
+}
+public func getIntRemoteConfig(key: Swift.String) -> Swift.Int
+public func getBoolRemoteConfig(key: Swift.String) -> Swift.Bool
+public func getDataRemoteConfig(key: Swift.String) -> Foundation.Data
+public func getStringRemoteConfig(key: Swift.String) -> Swift.String
+public func getConfig<T>(key: Swift.String, type: T.Type) -> T? where T : Swift.Decodable, T : Swift.Encodable
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
+  case failedToCreateWithHostname(Swift.String, Swift.Int32)
+  case unableToSetCallback(Swift.Int32)
+  case unableToSetDispatchQueue(Swift.Int32)
+  case unableToGetFlags(Swift.Int32)
+}
+@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
+public let ReachabilityChangedNotification: Foundation.NSNotification.Name
+extension Foundation.NSNotification.Name {
+  public static let reachabilityChanged: Foundation.Notification.Name
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class IKWidgetAdViewCore : ikame_ios_sdk.BCBaseNibView {
+  @_Concurrency.MainActor(unsafe) public var isAdLoaded: Swift.Bool {
+    get
+  }
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) public func loadAdCore(screen: Swift.String, adListener: (any ikame_ios_sdk.IKShowWidgetAdListener)?)
+  @_Concurrency.MainActor(unsafe) public func destroyAd()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didMoveToWindow()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol IKShowWidgetAdListener {
+  func onAdShowed(_ screen: Swift.String)
+  func onAdClick(_ screen: Swift.String)
+  func onAdShowFail(_ screen: Swift.String, _ error: ikame_ios_sdk.IKAdError)
+}
+@_hasMissingDesignatedInitializers public class IkmSdkCoreFunc {
+  public static var shared: ikame_ios_sdk.IkmSdkCoreFunc
+  public var isCanShowAdsResume: Swift.Bool
+  public func initAdsApplicationSdk()
+  @objc deinit
+}
+extension ikame_ios_sdk.IkmSdkCoreFunc : ikame_ios_sdk.IKShowAdListener {
+  public func onAdsShowed(_ screen: Swift.String)
+  public func onAdsDismiss(_ screen: Swift.String)
+  public func onAdsShowFail(_ screen: Swift.String, error: ikame_ios_sdk.IKAdError)
+  public func onAdsShowTimeout(_ screen: Swift.String)
+}
+public protocol IKLoadAdListener {
+  func onAdLoaded()
+  func onAdLoadFail(error: ikame_ios_sdk.IKAdError)
+}
+public class IKInterstitialAd {
+  public init()
+  public func loadAd(screenAd: Swift.String, callback: (any ikame_ios_sdk.IKLoadAdListener)?)
+  public func showAd(vc: UIKit.UIViewController, screen: Swift.String, adListener: (any ikame_ios_sdk.IKShowAdListener)?, loadingCallback: ikame_ios_sdk.IKLoadingsAdListener? = nil)
+  public func destroy()
+  @objc deinit
+}
+public class IKLoadingsAdListener {
+  public init(timeLoading: Swift.Int64, onShow: @escaping () -> Swift.Void, onClose: @escaping () -> Swift.Void)
+  @objc deinit
+}
+extension Foundation.Bundle {
+  public static let sdkResourceBundle: Foundation.Bundle?
+}
+public protocol IKShowRewardAdListener {
+  func onAdsShowed(_ screen: Swift.String)
+  func onAdsDismiss(_ screen: Swift.String)
+  func onAdsRewarded(_ screen: Swift.String)
+  func onAdsShowFail(_ screen: Swift.String, error: ikame_ios_sdk.IKAdError)
+  func onAdsShowTimeout(_ screen: Swift.String)
+}
+infix operator <- : DefaultPrecedence
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class IkmWidgetAdView : ikame_ios_sdk.IKWidgetAdViewCore {
+  @_Concurrency.MainActor(unsafe) public func loadAd(screen: Swift.String, adListener: (any ikame_ios_sdk.IKShowWidgetAdListener)?)
+  @_Concurrency.MainActor(unsafe) public func loadAd(layoutAd: ikame_ios_sdk.IkmWidgetAdLayout, layoutShimmerRes: UIKit.UIView, screen: Swift.String, adListener: (any ikame_ios_sdk.IKShowWidgetAdListener)?)
+  @_Concurrency.MainActor(unsafe) public func loadAd(layoutAd: ikame_ios_sdk.IkmWidgetAdLayout, screen: Swift.String, adListener: (any ikame_ios_sdk.IKShowWidgetAdListener)?)
+  @_Concurrency.MainActor(unsafe) public func reCallLoadAd(listener: (any ikame_ios_sdk.IKShowWidgetAdListener)?)
+  @_Concurrency.MainActor(unsafe) public func loadAdFs(layoutAd: ikame_ios_sdk.IkmWidgetAdLayout, screen: Swift.String, listener: (any ikame_ios_sdk.IKShowWidgetAdListener)?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class IKSdkController : ikame_ios_sdk.CoreController {
+  public static var shared: ikame_ios_sdk.IKSdkController
+  public func showAppOpenAd(vc: UIKit.UIViewController?, screen: Swift.String, callback: any ikame_ios_sdk.IKShowAdListener)
+  public func initAdsApplicationSdk()
+  public func setCanShowAdsResume(enable: Swift.Bool)
+  public func loadSplashScreenAd(vc: UIKit.UIViewController?, listener: (any ikame_ios_sdk.IKLoadAdListener)?)
+  #if compiler(>=5.3) && $AsyncAwait
+  public func showSplashScreenAd(vc: UIKit.UIViewController?, listener: (any ikame_ios_sdk.IKShowAdListener)?) async
+  #endif
+  public func preloadNativeAd(screen: Swift.String, callback: (any ikame_ios_sdk.IKLoadAdListener)?)
+  public func preloadNativeFullAd(screen: Swift.String, callback: (any ikame_ios_sdk.IKLoadAdListener)?)
+  @objc deinit
+}
+public struct IKAdError {
+  public let code: Swift.Int
+  public let message: Swift.String
+}
+public enum IKSdkErrorCode {
+  case NO_SCREEN_ID_AD
+  case DISABLE_PRELOAD
+  case CURRENT_AD_LOADING
+  case NO_DATA_TO_LOAD_AD
+  case UNIT_AD_NOT_VALID
+  case READY_CURRENT_AD
+  case LOAD_ADS_ERROR
+  case NOT_VALID_ADS_TO_SHOW
+  case LOADING_AD_TIMEOUT
+  case USER_PREMIUM
+  case NO_AD_FROM_SERVER
+  case USER_EXIT_APP
+  case OTHER_ADS_SHOWING
+  case DISABLE_SHOW
+  case SHOW_ADS_FAST
+  case ITEM_AD_BLOCK_SHOW
+  case CONTEXT_NOT_VALID
+  case NETWORK_AD_NOT_VALID_TO_LOAD
+  case SHOWING_FAIL
+  case AD_NETWORK_NULL
+  case VIEW_GROUP_NOT_VISIBLE
+  case VIEW_GROUP_NULL
+  public static func == (a: ikame_ios_sdk.IKSdkErrorCode, b: ikame_ios_sdk.IKSdkErrorCode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class CoreController {
+  @objc deinit
+}
+extension ikame_ios_sdk.IKSdkErrorCode : Swift.Equatable {}
+extension ikame_ios_sdk.IKSdkErrorCode : Swift.Hashable {}
